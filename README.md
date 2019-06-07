@@ -36,7 +36,7 @@ Read [wiki](https://github.com/EyobDejene/projectTech/wiki) for the whole proces
 
 Clone the repo
 ```bash
-git clone [this repo]
+git clone [https://github.com/EyobDejene/TechTeam.git]
 ```
 
 After the cloning the repo
