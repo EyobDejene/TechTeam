@@ -1,0 +1,53 @@
+<body id="filters">
+
+    <header>
+        <div class="container">
+        <nav>
+            <ul>
+            <li><a href="/" class="profile-button"><img src="/images/icons/left-arrow.svg" alt="back"></a></li>
+            <li><a href="/" class="logo"><img src="/images/icons/logo.svg" alt="logo"></a></li>
+            <!--<li><button  class="filter-button"></button></li>-->
+    
+            <li>
+                <a href="#filters"  class="filter-button show-filter"></a>
+                <button type="submit" form="filter"  class="filter-button-close hide-filter">Done</button>
+            </li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+    
+    <form id="regform" action="/registration" method="post" >
+       <legend>Registratie</legend>
+       <input type="text" name="first_name" placeholder="Voornaam">
+       <input type="text" name="last_name" placeholder="Achternaam">
+       <input type="email" name="email" placeholder="Email">
+       <input type="password" name="password" placeholder="password">
+       <input type="number" name="age" value="age" placeholder="leeftijd">
+       <textarea type="text" cols="40" rows="5" name="bio" placeholder="bio"></textarea>
+            <select name="skill_level" >
+                    <option name="beginner" value="beginner">Beginner</option>
+                    <option name="intermediate" value="intermediate">Intermediate</option>
+                    <option name="pro" value="pro">Pro</option>
+                  </select>
+
+                  <select name="running_scheme" >
+                        <option name="once_a_week" value="once_a_week">Once a week</option>
+                        <option name="twice_a_week" value="twice_a_week">Twice a week</option>
+                        <option name="3x_a_week" value="3x_a_week">3x_a_week</option>
+                      </select>
+
+                      <select name="practice_time" >
+                            <option name="0-30_mins" value="0-30_mins">0 to 30 mins</option>
+                            <option name="30-60_mins" value="30-60_mins">30 to 60 mins</option>
+                            <option name="60-90_mins" value="60-90_mins">60 to 90 mins</option>
+                          </select>
+
+                          <input type="submit" name="submit">
+    </form>
+    
+    </main>
+    <!--{{users}}-->
+    </body>

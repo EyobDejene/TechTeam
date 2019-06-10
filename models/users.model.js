@@ -3,13 +3,14 @@ var mongoose = require( 'mongoose' );
 let UsersSchema = new mongoose.Schema({
     first_name: String,
     last_name: String,
+    email: String,
     age: Number,
     avatar: String,
     bio: String,
     location: Number,
-    skill_level: Number,
-    running_scheme: Number,
-    practice_time: Number,
+    skill_level: String,
+    running_scheme: String,
+    practice_time: String,
     match_date: { type: Date, default: Date.now },
 });
 

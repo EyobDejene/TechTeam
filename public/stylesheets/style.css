@@ -709,3 +709,67 @@ input:focus {
     outline: none !important;
     box-shadow: 0 0 10px #719ECE!important;
 }
+
+#regform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  box-shadow: 10px 10px 37px -15px rgba(0,0,0,0.75);
+  padding: 1em;
+  width: 18em;
+  font-family: ProximaNova-Regular;
+  background-color: #FFAA1A;
+  border-radius: 0.5em;
+}
+
+#regform legend{
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  color: white;
+  font-family: ProximaNova-Bold;
+}
+
+#regform input{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+  padding: 0.2em;
+  border: none;
+  border-radius: 0.25em;
+}
+
+#regform input::placeholder{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+}
+
+#regform textarea{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+  border: none;
+  border-radius: 0.25em;
+}
+
+#regform textarea::placeholder{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+}
+
+#regform select{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+}
+
+#regform input[type=submit]{
+  border: none;
+  background-color: white;
+  width: 10em;
+  margin: auto;
+}
+
+#regform a {
+  color: white;
+  margin: auto;
+  margin-top: 1em;
+  text-decoration: none;
+}
