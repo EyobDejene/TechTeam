@@ -4,6 +4,7 @@ let UsersSchema = new mongoose.Schema({
     first_name: String,
     last_name: String,
     email: String,
+    password: String,
     age: Number,
     avatar: String,
     bio: String,
