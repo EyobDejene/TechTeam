@@ -20,11 +20,11 @@
     <section>
         <h1 >Profile</h1>
         <article class="profile">
-            <div class="img-holder">
+            <div class="img-holder-editProfile">
                 <img src="/images/profile_mark.jpg" alt="profile">
             </div>
             
-            <span class="name-plate"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
+            <span class="name-plate-editProfile"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
 
             <form action="/editProfile" method="POST">
 
@@ -35,6 +35,16 @@
             <label for="age">Age:</label>
 
                 <input id="age" type="text" name="age" value="<%= users.age%>">
+
+            <label for="skill">Skill level:</label>
+
+                <input name="skillLevel" type="range" min="1" max="10" value="<%= users.skill_level %>" class="slider" id="myRange">
+
+            <label for="scheme">Running Scheme:</label>
+
+                <input type="radio" name="scheme" value="male"> 1x per month
+                <input type="radio" name="scheme" value="female"> 2/3 per week
+                <input type="radio" name="scheme" value="other"> 1x per day
 
             <label for="bio">Bio:</label>
 
