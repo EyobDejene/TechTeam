@@ -10,8 +10,7 @@ router.get('/', function(req, res) {
 
 });
 
-
-router.post('/', userCheck, function(req, res) {
+router.post('/', function(req, res) {
    if(!req.body){
      return res.status(400).send('Request body is missing');
    }
@@ -21,24 +20,32 @@ router.post('/', userCheck, function(req, res) {
          if(!doc || doc.length === 0){
            return res.status(500).send(doc);
          }
-         res.status(201).send(doc);
-
-         
+        //  res.status(201).send(doc);
        })
+       .then(async function(){
+        var login = await loginModel.find({email: req.body.email});
+        var user = await usersModel.find({email: req.body.email});
+        var loginPass = await loginModel.find({password: req.body.password});
+        var userData = await usersModel.find({password: req.body.password});
+        if(login[0].email === user[0].email && loginPass[0].password === userData[0].password) {
+        res.redirect('main');
+    }
+      })
        .catch(err => {
          res.status(500).json(err);
        });
-   });
+});
 
-   async function userCheck(req, res) {
-    var login = await loginModel.find({email: req.body.email});
-    var user = await usersModel.find({email: req.body.email});
-    var loginPass = await loginModel.find({password: req.body.password});
-    var userData = await usersModel.find({password: req.body.password});
-    if(login[0].email === user[0].email && loginPass[0].password === userData[0].password) {
-        res.redirect('main');
-    }
-}
+//     async function userCheck(req, res) {
+//     var login = await loginModel.find({email: req.body.email});
+//     var user = await usersModel.find({email: req.body.email});
+//     var loginPass = await loginModel.find({password: req.body.password});
+//     var userData = await usersModel.find({password: req.body.password});
+//     console.log(login[0].email);
+//     if(login[0].email === user[0].email && loginPass[0].password === userData[0].password) {
+//         res.redirect('main');
+//     }
+// }
 
 
 

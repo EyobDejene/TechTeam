@@ -773,3 +773,9 @@ input:focus {
   margin-top: 1em;
   text-decoration: none;
 }
+
+#regform label {
+  color: white;
+  font-size: 1em;
+  margin-top: -0.8em;
+}

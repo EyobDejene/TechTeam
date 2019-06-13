@@ -6,7 +6,7 @@ let loginSchema = new mongoose.Schema({
 });
 
 
-const login = mongoose.model('login', loginSchema);
+const login = mongoose.model('logins', loginSchema);
 
 
 

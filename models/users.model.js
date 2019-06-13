@@ -9,9 +9,10 @@ let UsersSchema = new mongoose.Schema({
     avatar: String,
     bio: String,
     location: Number,
-    skill_level: String,
-    running_scheme: String,
-    practice_time: String,
+    skill_level: Number,
+    running_scheme: Number,
+    practice_time: Number,
+    max_distance: Number,
     match_date: { type: Date, default: Date.now },
 });
 

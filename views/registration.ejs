@@ -27,23 +27,40 @@
        <input type="password" name="password" placeholder="password">
        <input type="number" name="age" value="age" placeholder="leeftijd">
        <textarea type="text" cols="40" rows="5" name="bio" placeholder="bio"></textarea>
+            <label>Skill level</label>
             <select name="skill_level" >
-                    <option name="beginner" value="beginner">Beginner</option>
-                    <option name="intermediate" value="intermediate">Intermediate</option>
-                    <option name="pro" value="pro">Pro</option>
+                    <option name="0" value="0">Beginner</option>
+                    <option name="1" value="1">Intermediate</option>
+                    <option name="2" value="2">Pro</option>
                   </select>
 
+                  <label>Running scheme</label>
                   <select name="running_scheme" >
-                        <option name="once_a_week" value="once_a_week">Once a week</option>
-                        <option name="twice_a_week" value="twice_a_week">Twice a week</option>
-                        <option name="3x_a_week" value="3x_a_week">3x_a_week</option>
+                        <option name="0" value="0">Once a week</option>
+                        <option name="1" value="1">Twice a week</option>
+                        <option name="2" value="2">3x_a_week</option>
                       </select>
 
+                      <label>practice time</label>
                       <select name="practice_time" >
-                            <option name="0-30_mins" value="0-30_mins">0 to 30 mins</option>
-                            <option name="30-60_mins" value="30-60_mins">30 to 60 mins</option>
-                            <option name="60-90_mins" value="60-90_mins">60 to 90 mins</option>
+                            <option name="0" value="0">0 to 30 mins</option>
+                            <option name="1" value="1">30 to 60 mins</option>
+                            <option name="2" value="2">60 to 90 mins</option>
                           </select>
+
+                          <label>Max distance</label>
+                          <select name="max_distance" >
+                                <option name="5" value="5">5km</option>
+                                <option name="10" value="10">10km</option>
+                                <option name="15" value="15">15km</option>
+                                <option name="20" value="20">20km</option>
+                                <option name="25" value="25">25km</option>
+                                <option name="30" value="30">30km</option>
+                                <option name="35" value="35">35km</option>
+                                <option name="40" value="40">40km</option>
+                                <option name="45" value="45">45km</option>
+                                <option name="50" value="50">50km</option>
+                              </select>
 
                           <input type="submit" name="submit">
     </form>

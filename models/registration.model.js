@@ -10,6 +10,7 @@ let registrationSchema = new mongoose.Schema({
     skill_level: String,
     running_scheme: String,
     practice_time: String,
+    max_distance: Number,
 });
 
 
