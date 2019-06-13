@@ -17,18 +17,20 @@ router.post('/', function(req, res){
 
     User.findByIdAndUpdate(
         {_id: process.env.SESSION_SECRECT},
-        {bio: req.body.bio}, 
+        {bio: req.body.bio, age: req.body.age, skill_level: req.body.skillLevel}, 
         {upsert: true}, function(err, result){
             if(err){
                 console.log("post resulted in error", err);
             }
             else{
                 console.log('gelukt', result);
-                // res.redirect('/');
+                res.redirect('/');
             }
         }   
     );
+
 });
+
 
 
 module.exports = router;
