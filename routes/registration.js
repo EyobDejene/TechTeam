@@ -20,9 +20,17 @@ router.post('/', function(req, res, next) {
          if(!doc || doc.length === 0){
            return res.status(500).send(doc);
          }
-         res.redirect('main');
-         res.status(201).send(doc);
-       })
+        //  res.redirect('main');
+        //  res.status(201).send(doc);
+       }).then(async function(){
+          var user = await userModel.find({email: req.body.email});
+          req.session.user = user[0]._id;
+          req.session.userName = user[0].first_name;
+          req.session.lastName = user[0].last_name;
+          req.session.userAge = user[0].age;
+          req.session.userLocation = user[0].location;
+          res.redirect('main');
+        })
        .catch(err => {
          res.status(500).json(err);
        });

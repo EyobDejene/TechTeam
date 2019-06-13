@@ -27,6 +27,11 @@ router.post('/', function(req, res) {
         var user = await usersModel.find({email: req.body.email});
         var loginPass = await loginModel.find({password: req.body.password});
         var userData = await usersModel.find({password: req.body.password});
+        req.session.user = user[0]._id;
+        req.session.userName = user[0].first_name;
+        req.session.lastName = user[0].last_name;
+        req.session.userAge = user[0].age;
+        req.session.userLocation = user[0].location;
         if(login[0].email === user[0].email && loginPass[0].password === userData[0].password) {
         res.redirect('main');
     }
