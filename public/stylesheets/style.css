@@ -716,6 +716,7 @@ input:focus {
   justify-content: center;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 fieldset {
@@ -733,6 +734,11 @@ fieldset {
   font-size: 1.2rem;
 }
 
+textarea {
+  height: 10rem;
+  resize: none;
+}
+
 .saveButton {
   background-color: #66d43f;
   color: white;
@@ -745,4 +751,36 @@ fieldset {
   color: white;
   height: 3rem;
   font-size: 1.2rem;
+}
+
+.img-holder-editProfile{
+  margin-bottom: 3rem;
+}
+
+.img-holder-editProfile img{
+  border-radius:50%;
+  width: 10rem;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.name-plate-editProfile{
+  
+  width: 15rem;
+  height: auto;
+  background-color: #5157f2;
+  position: absolute;
+  text-align: center;
+  border-radius: 0.3rem;
+
+  left: 0;
+  right: 0;
+  margin: -1.5rem auto;
+  font-family: ProximaNova-Black;
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  padding:1rem;
+
 }
