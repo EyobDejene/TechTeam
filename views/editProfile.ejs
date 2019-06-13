@@ -18,23 +18,34 @@
 
 <main>
     <section>
-        <h1 class="not-visible">stack</h1>
+        <h1 >Profile</h1>
         <article class="profile">
             <div class="img-holder">
                 <img src="/images/profile_mark.jpg" alt="profile">
             </div>
-            <span class="name-plate"><%= users.first_name %><span class="age"><%= users.age %></span></span>
+            
+            <span class="name-plate"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
 
+            <form action="/editProfile" method="POST">
 
-            <form action="/" method="POST">
-                        
+            <fieldset>
+
+            <span class="profileform">            
+            
             <label for="age">Age:</label>
 
                 <input id="age" type="text" name="age" value="<%= users.age%>">
 
             <label for="bio">Bio:</label>
 
-                <textarea id="bio" name="bio" maxlength="700" ><%= users.bio %></textarea>
+                <textarea id="bio" name="bio" maxlength="700" name="bio"><%= users.bio %></textarea>
+
+            <input type="submit" value="save changes" class="saveButton">
+            <button type="submit" formaction="/cancel" class="cancelButton">cancel</button>
+
+            </span>
+
+            </fieldset>
 
             </form>
 
