@@ -15,3 +15,31 @@
     </div>
 </header>
 <!-- end header -->
+
+<main>
+    <section>
+        <h1 class="not-visible">stack</h1>
+        <article class="profile">
+            <div class="img-holder">
+                <img src="/images/profile_mark.jpg" alt="profile">
+            </div>
+            <span class="name-plate"><%= users.first_name %><span class="age"><%= users.age %></span></span>
+
+
+            <form action="/" method="POST">
+                        
+            <label for="age">Age:</label>
+
+                <input id="age" type="text" name="age" value="<%= users.age%>">
+
+            <label for="bio">Bio:</label>
+
+                <textarea id="bio" name="bio" maxlength="700" ><%= users.bio %></textarea>
+
+            </form>
+
+
+        </article>
+    </section>
+</main>
+<!-- end main content-->
