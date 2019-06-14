@@ -4,13 +4,19 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
+
+
     if(req.session.user) {
         var skillLevel = req.session.skillLevel;
         // var userAge = calculate_age(new Date(req.session.userAge));
-        var runningScheme = req.session.runningScheme;
-        var practiceTime = req.session.practiceTime;
-        var distance = req.session.userLocation;
-        var maxDistance = 35;
+        // var runningScheme = req.session.runningScheme;
+        // var practiceTime = req.session.practiceTime;
+        // var distance = req.session.userLocation;
+
+        var maxDistance = req.session.maxDistance;
+
+        // console.log(maxDistance);
 
         function calculate_age(age) {
             var date = new Date();
@@ -30,7 +36,7 @@ router.get('/', function(req, res, next) {
             .then(function (users) {
                 if (req.xhr) {
                     res.json(users);
-                    console.log(users);
+                    // console.log(users);
                 } else {
                     res.render('index', {
                         title: 'inSync',
@@ -47,7 +53,7 @@ router.get('/', function(req, res, next) {
                 });
             });
     }else{
-        res.status(301).redirect("/login");
+        res.status(301).redirect("/onboarding");
         // res.render('login', {
         //     message: 'No session has been found -> first login'
         // });

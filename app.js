@@ -22,6 +22,7 @@ var registrationRouter = require('./routes/registration');
 var onboardingRouter = require('./routes/onboarding');
 
 
+
 var app = express();
 
 // view engine setup
@@ -41,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressSession({secret:process.env.SESSION_SECRECT,saveUninitialized:true,resave:false, cookie: {maxAge: 900000},expires: new Date(Date.now() + 900000) }));
 
 app.use('/', onboardingRouter);
-app.use('/main', indexRouter);
+app.use('/explore', indexRouter);
 app.use('/users', usersRouter);
 app.use('/overview', overviewRouter);
 app.use('/login', loginRouter);

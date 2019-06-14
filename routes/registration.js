@@ -24,12 +24,14 @@ router.post('/', function(req, res, next) {
         //  res.status(201).send(doc);
        }).then(async function(){
           var user = await userModel.find({email: req.body.email});
-          req.session.user = user[0]._id;
-          req.session.userName = user[0].first_name;
-          req.session.lastName = user[0].last_name;
-          req.session.userAge = user[0].age;
-          req.session.userLocation = user[0].location;
-          res.redirect('main');
+           req.session.user = user[0]._id;
+           req.session.userName = user[0].first_name;
+           req.session.lastName = user[0].last_name;
+           req.session.userAge = user[0].age;
+           req.session.userLocation = user[0].location;
+           req.session.skillLevel = user[0].skill_level;
+           req.session.maxDistance = user[0].max_distance;
+          res.redirect('explore');
         })
        .catch(err => {
          res.status(500).json(err);
