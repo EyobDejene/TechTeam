@@ -18,6 +18,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var overviewRouter = require('./routes/overview');
 var loginRouter = require('./routes/login');
+var editRouter = require('./routes/editProfile');
 var registrationRouter = require('./routes/registration');
 var onboardingRouter = require('./routes/onboarding');
 
@@ -46,6 +47,7 @@ app.use('/explore', indexRouter);
 app.use('/users', usersRouter);
 app.use('/overview', overviewRouter);
 app.use('/login', loginRouter);
+app.use('/editProfile', editRouter);
 app.use('/registration', registrationRouter);
 // app.use('/onboarding', onboardingRouter);
 

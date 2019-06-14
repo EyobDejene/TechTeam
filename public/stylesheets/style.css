@@ -723,6 +723,86 @@ input:focus {
     box-shadow: 0 0 10px #719ECE!important;
 }
 
+.profileform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.profileform input[type="text"],textarea {
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  border-style: none;
+  margin-bottom: 1rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+}
+
+textarea {
+  height: 10rem;
+  resize: none;
+}
+
+.saveButton {
+  background-color: #66d43f;
+  color: white;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+
+.cancelButton {
+  background-color: red;
+  color: white;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+
+.img-holder-editProfile{
+  margin-bottom: 3rem;
+}
+
+.img-holder-editProfile img{
+  border-radius:50%;
+  width: 10rem;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.name-plate-editProfile{
+  
+  width: 15rem;
+  height: auto;
+  background-color: #5157f2;
+  position: absolute;
+  text-align: center;
+  border-radius: 0.3rem;
+
+  left: 0;
+  right: 0;
+  margin: -1.5rem auto;
+  font-family: ProximaNova-Black;
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  padding:1rem;
+
+}
+
+.profileChoice{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly
+
 #regform {
   display: flex;
   flex-direction: column;

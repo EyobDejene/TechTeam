@@ -1,0 +1,83 @@
+<body id="home-page">
+
+<!-- start header -->
+<header>
+    <div class="container">
+    <!-- start navigation -->
+    <nav>
+        <ul>
+        <li><a href="/login" class="profile-button"><img alt="profile" src="/images/icons/profile.svg"></a></li>
+        <li><a href="/" class="logo"><img alt="logo" src="/images/icons/logo.svg"></a></li>
+        <li><a href="/overview" class="matches-button"><img alt="overview" src="/images/icons/heartbeat.svg"></a></li>
+        </ul>
+    </nav>
+    <!-- end navigation -->
+    </div>
+</header>
+<!-- end header -->
+
+<main>
+    <section>
+        <h1 >Profile</h1>
+        <article class="profile">
+            <div class="img-holder-editProfile">
+                <img src="/images/<%= users.avatar%>" alt="profile">
+            </div>
+            
+            <span class="name-plate-editProfile"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
+
+            <form action="/editProfile" method="POST" enctype="multipart/form-data">
+
+            <fieldset>
+
+            <span class="profileform">
+
+            <input type="file">            
+            
+            <label for="age">Age:</label>
+
+                <input id="age" type="text" name="age" value="<%= users.age%>">
+
+            <label for="skill">Skill level:</label>
+
+                <input name="skillLevel" type="range" min="0" max="2" value="<%= users.skill_level %>" class="slider" id="myRange">
+
+            <h3>Running scheme:</h3>
+
+                    <span class ="profileChoice">
+
+                <input type="radio" name="scheme" value="0"> 1x per month
+                <input type="radio" name="scheme" value="1"> 2/3 per week
+                <input type="radio" name="scheme" value="2"> 1x per day
+
+                    </span>
+
+
+            <h3>Practice time:</h3>
+
+                    <span class ="profileChoice">
+
+                <input type="radio" name="time" value="0"> Morning
+                <input type="radio" name="time" value="1"> Afternoon
+                <input type="radio" name="time" value="2"> Evening
+
+                    </span>
+
+            <label for="bio">Bio:</label>
+
+                <textarea id="bio" name="bio" maxlength="700" name="bio"><%= users.bio %></textarea>
+
+            <input type="submit" value="save changes" class="saveButton">
+            <button type="submit" formaction="/cancel" class="cancelButton">cancel</button>
+
+            </span>
+
+            </fieldset>
+
+            </form>
+
+
+        </article>
+    </section>
+</main>
+<!-- end main content-->
