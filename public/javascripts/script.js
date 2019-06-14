@@ -74,7 +74,7 @@ async function placeDataExplore(){
 }
 
 
-let search = document.querySelector('.like');
+let search = document.querySelector('.refresh');
 search.addEventListener("click", function () {
     placeDataExplore();
 });
