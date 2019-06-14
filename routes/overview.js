@@ -19,7 +19,7 @@ overview.get('/', function(req, res, next) {
 
             //calc dif
             function difference(n, m) {
-                return Math.abs(n - m)
+                return Math.abs(n - m);
             }
 
             function ageDifference(userAge, ageRange) {

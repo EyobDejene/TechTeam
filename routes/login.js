@@ -13,6 +13,10 @@ router.get('/', function(req, res, next) {
             req.session.lastName = client.last_name;
             req.session.userAge = client.age;
             req.session.userLocation = client.location;
+            req.session.skillLevel = client.skill_level;
+            req.session.runningScheme = client.running_scheme;
+            req.session.practiceTime = client.practice_time;
+
 
             res.render('login', {
                 message: 'login session created!',

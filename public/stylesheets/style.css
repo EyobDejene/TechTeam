@@ -164,7 +164,7 @@ main{
 .profile .img-holder
 {
   height: 60vh;
-  background-color: red;
+  background-color: transparent;
   position: relative;
   overflow: hidden;
 
@@ -267,6 +267,19 @@ main{
   margin-top: -1rem;
 
 }
+
+.container-buttons .refresh::after{
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background: url("/images/icons/refresh.svg") no-repeat center;
+  display: inline-block;
+  position: absolute;
+  margin-left: -1rem;
+  margin-top: -1rem;
+
+}
+
 
 .container-buttons .like::after{
   content: "";
@@ -790,4 +803,72 @@ textarea {
   flex-direction: row;
   justify-content: space-evenly
 
+#regform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  box-shadow: 10px 10px 37px -15px rgba(0,0,0,0.75);
+  padding: 1em;
+  width: 18em;
+  font-family: ProximaNova-Regular;
+  background-color: #FFAA1A;
+  border-radius: 0.5em;
+}
+
+#regform legend{
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  color: white;
+  font-family: ProximaNova-Bold;
+}
+
+#regform input{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+  padding: 0.2em;
+  border: none;
+  border-radius: 0.25em;
+}
+
+#regform input::placeholder{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+}
+
+#regform textarea{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+  border: none;
+  border-radius: 0.25em;
+}
+
+#regform textarea::placeholder{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+}
+
+#regform select{
+  margin-bottom: 1em;
+  color: #FFAA1A;
+}
+
+#regform input[type=submit]{
+  border: none;
+  background-color: white;
+  width: 10em;
+  margin: auto;
+}
+
+#regform a {
+  color: white;
+  margin: auto;
+  margin-top: 1em;
+  text-decoration: none;
+}
+
+#regform label {
+  color: white;
+  font-size: 1em;
+  margin-top: -0.8em;
 }
