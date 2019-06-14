@@ -17,7 +17,7 @@ router.post('/', function(req, res){
 
     User.findByIdAndUpdate(
         {_id: process.env.SESSION_SECRECT},
-        {bio: req.body.bio, age: req.body.age, skill_level: req.body.skillLevel}, 
+        {bio: req.body.bio, age: req.body.age, skill_level: req.body.skillLevel, running_scheme: req.body.scheme1}, 
         {upsert: true}, function(err, result){
             if(err){
                 console.log("post resulted in error", err);
