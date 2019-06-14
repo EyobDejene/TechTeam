@@ -41,7 +41,8 @@ overview.get('/', function(req, res, next) {
                 age: maxAge,
                 location: {$lte: distance},
                 running_scheme: runningScheme,
-                practice_time: practiceTime
+                practice_time: practiceTime,
+                _id: { $ne: req.session.user },
             }).select('first_name age avatar location match_date')
                 .exec()
                 .then(function (users) {
@@ -67,7 +68,7 @@ overview.get('/', function(req, res, next) {
             });
         }
     }else{
-        userList.find().select('first_name age avatar location match_date')
+        userList.find({ _id: { $ne: req.session.user }}).select('first_name age avatar location match_date')
             .exec()
             .then(function (users) {
                 res.render('overview', {
