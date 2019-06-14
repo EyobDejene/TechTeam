@@ -38,23 +38,22 @@
 
             <label for="skill">Skill level:</label>
 
-                <input name="skillLevel" type="range" min="1" max="10" value="<%= users.skill_level %>" class="slider" id="myRange">
+                <input name="skillLevel" type="range" min="0" max="2" value="<%= users.skill_level %>" class="slider" id="myRange">
 
-            <h3>Running scheme::</h3>
+            <h3>Running scheme:</h3>
 
-                <input type="radio" name="scheme" value="male"> 1x per month
-                <input type="radio" name="scheme" value="female"> 2/3 per week
-                <input type="radio" name="scheme" value="other"> 1x per day
+                    <span class ="profileChoice">
 
-            <h3>Running scheme::</h3>
+                <input type="radio" name="scheme1" value="0"> 1x per month
+                <input type="radio" name="scheme1" value="1"> 2/3 per week
+                <input type="radio" name="scheme1" value="2"> 1x per day
 
-            <input type="checkbox" id="week" name="horns">
-            <label for="week">Week</label>
+                    </span>
 
-            <input type="checkbox" id="weekend" name="horns">
-            <label for="weekend">Weekend</label>
 
             <h3>Practice time:</h3>
+
+                <span class ="profileChoice">
 
             <input type="checkbox" id="morning" name="horns">
             <label for="morning">Morning</label>
@@ -64,6 +63,8 @@
 
             <input type="checkbox" id="evening" name="horns">
             <label for="evening">Evening</label>
+
+                </span>
 
             <label for="bio">Bio:</label>
 
