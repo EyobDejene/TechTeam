@@ -27,9 +27,11 @@
             <span class="name-plate-editProfile"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
             <br>
             <h1>You are about to delete your account, are you sure?</h1>
-            <a href="/editProfile">No</a>
-            <a href="/deleting">YES</a>
-
+            <div id="confirmation-box">
+            <h1>Delete Account?</h1>
+                <a class="noButton" href="/editProfile">No</a>
+                <a class="yesButton" href="/deleting">YES</a>
+            </div>
         </article>
     </section>
 </main>
