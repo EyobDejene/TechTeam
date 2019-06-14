@@ -784,3 +784,10 @@ textarea {
   padding:1rem;
 
 }
+
+.profileChoice{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly
+
+}
