@@ -21,12 +21,12 @@
         <h1>Profile</h1>
         <article class="profile">
             <div class="img-holder-editProfile">
-                <img src="<%= users.avatar%>" alt="profile">
+                <img src="upload/<%= users.avatar%>" alt="profile">
             </div>
             
             <span class="name-plate-editProfile"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
 
-            <form action="/editProfile" method="POST">
+            <form action="/editProfile" method="POST" enctype="multipart/form-data">
 
             <fieldset>
 
