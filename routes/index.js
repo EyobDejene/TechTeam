@@ -5,7 +5,61 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    res.render('index', {title: 'Insync',});
+
+
+    if(req.session.user) {
+        var skillLevel = req.session.skillLevel;
+        // var userAge = calculate_age(new Date(req.session.userAge));
+        // var runningScheme = req.session.runningScheme;
+        // var practiceTime = req.session.practiceTime;
+        // var distance = req.session.userLocation;
+
+        var maxDistance = req.session.maxDistance;
+
+        // console.log(maxDistance);
+
+        function calculate_age(age) {
+            var date = new Date();
+            return Math.abs(age.getFullYear() - date.getFullYear());
+        }
+
+        // console.log("distance " + distance);
+        // console.log("age " + maxAge);
+
+        userModel.find({
+            skill_level: skillLevel,
+            location: {$lte: maxDistance},
+            // running_scheme: runningScheme,
+            // practice_time: practiceTime
+        }).select('first_name age avatar location match_date bio')
+            .exec()
+            .then(function (users) {
+                if (req.xhr) {
+                    res.json(users);
+                    // console.log(users);
+                } else {
+                    res.render('index', {
+                        title: 'inSync',
+                        users: users,
+                        filter: false,
+                        session: req.session.user
+                    });
+
+
+                }
+            })
+            .catch(err => {
+                res.status(500).json({
+                    error: err
+                });
+            });
+    }else{
+        res.status(301).redirect("/onboarding");
+        // res.render('login', {
+        //     message: 'No session has been found -> first login'
+        // });
+    }
+
 
 });
 

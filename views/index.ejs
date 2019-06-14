@@ -6,8 +6,8 @@
     <!-- start navigation -->
     <nav>
         <ul>
-        <li><a href="/login" class="profile-button"><img alt="profile" src="/images/icons/profile.svg"></a></li>
-        <li><a href="/" class="logo"><img alt="logo" src="/images/icons/logo.svg"></a></li>
+        <li><a href="/editProfile" class="profile-button"><img alt="profile" src="/images/icons/profile.svg"></a></li>
+        <li><a href="/explore" class="logo"><img alt="logo" src="/images/icons/logo.svg"></a></li>
         <li><a href="/overview" class="matches-button"><img alt="overview" src="/images/icons/heartbeat.svg"></a></li>
         </ul>
     </nav>
@@ -19,30 +19,38 @@
 <!-- start main content -->
 <main>
     <section>
-        <h1 class="not-visible">stack</h1>
-        <article class="profile">
-            <div class="img-holder">
-                <img src="/images/profile_mark.jpg" alt="profile">
-            </div>
-            <span class="name-plate">Mark, <span class="age">25</span></span>
-            <div class="about">
-                <div class="container">
-                    <span class="location">
-                        <img src="/images/icons/pin.svg" alt="pinpoint">
-                        <span class="distance">2km away from you</span>
-                    </span>
-                    <h2>About</h2>
-                    <p>
-                       Ik reis graag maar niet alleen<br>
-                       Sporten is mijn passie, Olympysch goud op de 5km
-                    </p>
-                    <div class="container-buttons">
-                    <button class="option dislike"></button>
-                    <button class="option like"></button>
+        <% if (users.length >1) { %>
+            <h1 class="not-visible">stack</h1>
+            <article class="profile">
+                <div class="img-holder">
+                    <img id="avatar" src="upload/<%= users[0].avatar%>" alt="profile">
+                </div>
+                <span class="name-plate">
+                    <span class="first-name"> <%= users[0].first_name%></span>,
+                    <span class="age"><%=users[0].age%></span></span>
+                <div class="about">
+                    <div class="container">
+                        <span class="location">
+                            <img src="/images/icons/pin.svg" alt="pinpoint">
+                            <span class="distance">
+                                <span class="distance-location"> <%= users[0].location%></span>
+                                km away from you</span>
+                        </span>
+                        <h2>About</h2>
+                        <p class="bio-text">
+                           <%= users[0].bio%>
+                        </p>
+                        <div class="container-buttons">
+                        <button class="option dislike"></button>
+                        <button class="option refresh"></button>
+                        <button class="option like"></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        <% }else{ %>
+            <h1>No users where found near you</h1>
+         <% } %>
     </section>
 </main>
 <!-- end main content-->

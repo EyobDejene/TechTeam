@@ -1,0 +1,98 @@
+<body id="home-page">
+
+<!-- start header -->
+<header>
+    <div class="container">
+    <!-- start navigation -->
+    <nav>
+        <ul>
+        <li><a href="/explore" class="profile-button"><img src="/images/icons/left-arrow.svg" alt="back"></a></li>
+        <li><a href="/explore" class="logo"><img alt="logo" src="/images/icons/logo.svg"></a></li>
+        <li><a href="/overview" class="matches-button"><img alt="overview" src="/images/icons/heartbeat.svg"></a></li>
+        </ul>
+    </nav>
+    <!-- end navigation -->
+    </div>
+</header>
+<!-- end header -->
+
+<main>
+    <section>
+        <h1>Profile</h1>
+        <article class="profile">
+            <div class="img-holder-editProfile">
+                <img src="<%= users.avatar%>" alt="profile">
+            </div>
+            
+            <span class="name-plate-editProfile"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
+
+            <form action="/editProfile" method="POST">
+
+            <fieldset>
+
+            <span class="profileform">
+
+            <input type="file" name="avatar">            
+            
+            <label for="age">Age:</label>
+
+                <input id="age" type="text" name="age" value="<%= users.age%>">
+
+               <div class="option">
+                <h2>Skill Level</h2>
+                <span class="output skill">Intermediate</span>
+                <input type="range" name="skillLevel" min="1" max="4" value="<%= users.skill_level %>" class="slider
+                filtering" id="skill">
+                <hr>
+               </div>
+
+                 <div class="option">
+                <h2>Max Distance</h2>
+                <span class="output distance">35</span>
+                <input type="range" name="maxDistance" step="5" min="0" max="50" value="<%= users.max_distance %>" class="slider filtering" id="distance">
+                <hr>
+                </div>
+
+
+
+            <h3>Running scheme:</h3>
+
+                    <span class ="profileChoice">
+
+                <input type="radio" name="scheme" value="0" <% if(users.running_scheme == 0){%> checked <%}%>> 1x per month
+                <input type="radio" name="scheme" value="1" <% if(users.running_scheme == 1){%> checked <%}%>> 2/3 per week
+                <input type="radio" name="scheme" value="2" <% if(users.running_scheme == 2){%> checked <%}%>> 1x per day
+
+                    </span>
+
+
+            <h3>Practice time:</h3>
+
+                    <span class ="profileChoice">
+
+                <input type="radio" name="time" value="0" <% if(users.practice_time == 0){%> checked <%}%>> Morning
+                <input type="radio" name="time" value="1" <% if(users.practice_time == 1){%> checked <%}%>> Afternoon
+                <input type="radio" name="time" value="2" <% if(users.practice_time == 2){%> checked <%}%>> Evening
+
+                    </span>
+
+            <label for="bio">Bio:</label>
+
+                <textarea id="bio" name="bio" maxlength="700" name="bio"><%= users.bio %></textarea>
+
+            <input type="submit" value="save changes" class="saveButton">
+            <button type="submit" formaction="/cancel" class="cancelButton">cancel</button>
+            <button><a href="/deleteProfile">Delete your account</a></button>
+
+            </span>
+
+            </fieldset>
+
+            </form>
+
+
+
+        </article>
+    </section>
+</main>
+<!-- end main content-->

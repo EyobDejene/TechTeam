@@ -17,8 +17,11 @@ require('./models/db');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var overviewRouter = require('./routes/overview');
-var loginRouter = require('./routes/login');
-
+var editRouter = require('./routes/editProfile');
+var registrationRouter = require('./routes/registration');
+var onboardingRouter = require('./routes/onboarding');
+var deleteRouter = require('./routes/deleteProfile');
+var deletingRouter = require('./routes/deleting');
 
 var app = express();
 
@@ -38,10 +41,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressSession({secret:process.env.SESSION_SECRECT,saveUninitialized:true,resave:false, cookie: {maxAge: 900000},expires: new Date(Date.now() + 900000) }));
 
-app.use('/', indexRouter);
+app.use('/', onboardingRouter);
+app.use('/explore', indexRouter);
 app.use('/users', usersRouter);
 app.use('/overview', overviewRouter);
-app.use('/login', loginRouter);
+app.use('/editProfile', editRouter);
+app.use('/registration', registrationRouter);
+app.use('/deleteProfile', deleteRouter);
+app.use('/deleting', deletingRouter);
+// app.use('/onboarding', onboardingRouter);
 
 
 // catch 404 and forward to error handler
