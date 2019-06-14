@@ -62,7 +62,7 @@ async function placeDataExplore(){
         var randomItem = data[Math.floor(Math.random()*data.length)];
        // console.log(randomItem);
         //document.querySelector('.results-count').innerHTML = data.length;
-       document.getElementById('avatar').src = "images/"+randomItem.avatar;
+       document.getElementById('avatar').src = "upload/"+randomItem.avatar;
        document.querySelector('.first-name').innerHTML = randomItem.first_name;
        document.querySelector('.age').innerHTML = randomItem.age;
        document.querySelector('.distance-location').innerHTML = randomItem.location;

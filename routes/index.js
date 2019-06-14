@@ -45,6 +45,7 @@ router.get('/', function(req, res, next) {
                         session: req.session.user
                     });
 
+
                 }
             })
             .catch(err => {
