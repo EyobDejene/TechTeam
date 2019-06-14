@@ -3,7 +3,8 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/users.model');
 var multer = require('multer');
-var upload = multer({dest: '../public/upload/'});
+var upload = multer({dest: 'public/upload/'});
+
 
 router.get('/', function(req, res) {
     
@@ -14,13 +15,25 @@ router.get('/', function(req, res) {
         });
 });
 
-router.post('/', function(req, res){
+router.post('/',upload.single("avatar") ,function(req, res){
     console.log("a post came in with body", req.body);
 
+    var uploadImage;
+
+    if(req.file == undefined){
+        console.log("no image was uploaded");
+        uploadImage = "/images/lol.png";
+        }
+  
+    else{
+        console.log("hallo? ajhsgdjhasg");
+        uploadImage = req.file.filename;
+        }
+
+
     User.findByIdAndUpdate(
-        {_id: process.env.SESSION_SECRECT},
-        {bio: 
-            req.body.bio, age: req.body.age, skill_level: req.body.skillLevel, running_scheme: req.body.scheme, practice_time: req.body.time}, 
+        {_id: req.session.user},
+        {bio: req.body.bio, age: req.body.age, skill_level: req.body.skillLevel, running_scheme: req.body.scheme, practice_time: req.body.time, avatar: uploadImage}, 
         {upsert: true}, function(err, result){
             if(err){
                 console.log("post resulted in error", err);
