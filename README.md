@@ -7,7 +7,7 @@
 >This feature focuses on filtering of your matches.
 
 # Live version
-https://datingapplication.herokuapp.com/
+https://teamdating.herokuapp.com/editProfile
 
 # Usage
 The filter button is by default not visible.<br/>
