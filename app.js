@@ -18,6 +18,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var overviewRouter = require('./routes/overview');
 var loginRouter = require('./routes/login');
+var registrationRouter = require('./routes/registration');
+var onboardingRouter = require('./routes/onboarding');
 
 
 var app = express();
@@ -38,10 +40,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressSession({secret:process.env.SESSION_SECRECT,saveUninitialized:true,resave:false, cookie: {maxAge: 900000},expires: new Date(Date.now() + 900000) }));
 
-app.use('/', indexRouter);
+app.use('/', onboardingRouter);
+app.use('/main', indexRouter);
 app.use('/users', usersRouter);
 app.use('/overview', overviewRouter);
 app.use('/login', loginRouter);
+app.use('/registration', registrationRouter);
+// app.use('/onboarding', onboardingRouter);
 
 
 // catch 404 and forward to error handler

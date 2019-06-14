@@ -1,0 +1,84 @@
+<body id="filters">
+
+    <header>
+        <div class="container">
+        <nav>
+            <ul>
+            <li><a href="/" class="profile-button"><img src="/images/icons/left-arrow.svg" alt="back"></a></li>
+            <li><a href="/" class="logo"><img src="/images/icons/logo.svg" alt="logo"></a></li>
+            <!--<li><button  class="filter-button"></button></li>-->
+    
+            <li>
+                <a href="#filters"  class="filter-button show-filter"></a>
+                <button type="submit" form="filter"  class="filter-button-close hide-filter">Done</button>
+            </li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+    
+    <form id="regform" action="/registration" method="post" >
+       <legend>Registratie</legend>
+       <input type="text" name="first_name" placeholder="Voornaam">
+       <input type="text" name="last_name" placeholder="Achternaam">
+       <input type="email" name="email" placeholder="Email">
+       <input type="password" name="password" placeholder="password">
+       <input type="number" name="age" value="age" placeholder="leeftijd">
+       <textarea type="text" cols="40" rows="5" name="bio" placeholder="bio"></textarea>
+            <label>Skill level</label>
+            <select name="skill_level" >
+                    <option name="0" value="0">Beginner</option>
+                    <option name="1" value="1">Intermediate</option>
+                    <option name="2" value="2">Pro</option>
+                  </select>
+
+                  <label>Running scheme</label>
+                  <select name="running_scheme" >
+                        <option name="0" value="0">Once a week</option>
+                        <option name="1" value="1">Twice a week</option>
+                        <option name="2" value="2">3x_a_week</option>
+                      </select>
+
+                      <label>practice time</label>
+                      <select name="practice_time" >
+                            <option name="0" value="0">0 to 30 mins</option>
+                            <option name="1" value="1">30 to 60 mins</option>
+                            <option name="2" value="2">60 to 90 mins</option>
+                          </select>
+
+                          <label>Max distance</label>
+                          <select name="max_distance" >
+                                <option name="5" value="5">5km</option>
+                                <option name="10" value="10">10km</option>
+                                <option name="15" value="15">15km</option>
+                                <option name="20" value="20">20km</option>
+                                <option name="25" value="25">25km</option>
+                                <option name="30" value="30">30km</option>
+                                <option name="35" value="35">35km</option>
+                                <option name="40" value="40">40km</option>
+                                <option name="45" value="45">45km</option>
+                                <option name="50" value="50">50km</option>
+                              </select>
+
+                          <label>Max match afstand</label>
+                          <select name="location" >
+                                <option name="5" value="5">5km</option>
+                                <option name="10" value="10">10km</option>
+                                <option name="15" value="15">15km</option>
+                                <option name="20" value="20">20km</option>
+                                <option name="25" value="25">25km</option>
+                                <option name="30" value="30">30km</option>
+                                <option name="35" value="35">35km</option>
+                                <option name="40" value="40">40km</option>
+                                <option name="45" value="45">45km</option>
+                                <option name="50" value="50">50km</option>
+                              </select>
+
+                          <input type="submit" name="submit">
+    </form>
+    
+    </main>
+    <!--{{users}}-->
+    </body>
