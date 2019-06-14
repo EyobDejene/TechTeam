@@ -2,6 +2,8 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/users.model');
+var multer = require('multer');
+var upload = multer({dest: '../public/upload/'});
 
 router.get('/', function(req, res) {
     
@@ -17,7 +19,8 @@ router.post('/', function(req, res){
 
     User.findByIdAndUpdate(
         {_id: process.env.SESSION_SECRECT},
-        {bio: req.body.bio, age: req.body.age, skill_level: req.body.skillLevel, running_scheme: req.body.scheme, practice_time: req.body.time}, 
+        {bio: 
+            req.body.bio, age: req.body.age, skill_level: req.body.skillLevel, running_scheme: req.body.scheme, practice_time: req.body.time}, 
         {upsert: true}, function(err, result){
             if(err){
                 console.log("post resulted in error", err);
@@ -30,6 +33,7 @@ router.post('/', function(req, res){
     );
 
 });
+
 
 
 
