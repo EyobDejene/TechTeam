@@ -9,9 +9,9 @@ const explore = function () {
         return Promise.reject(new Error(response.statusText));
     }
 
-    const json = response => response.json()
+    const json = response => response.json();
 
-    const searchResponse =  fetch('/',
+    const searchResponse =  fetch('/explore',
         {
             method: 'get', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, cors, *same-origin
