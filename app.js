@@ -21,8 +21,7 @@ var loginRouter = require('./routes/login');
 var editRouter = require('./routes/editProfile');
 var registrationRouter = require('./routes/registration');
 var onboardingRouter = require('./routes/onboarding');
-
-
+var deleteRouter = require('./routes/deleteProfile');
 
 var app = express();
 
@@ -49,6 +48,7 @@ app.use('/overview', overviewRouter);
 app.use('/login', loginRouter);
 app.use('/editProfile', editRouter);
 app.use('/registration', registrationRouter);
+app.use('/deleteProfile', deleteRouter);
 // app.use('/onboarding', onboardingRouter);
 
 
