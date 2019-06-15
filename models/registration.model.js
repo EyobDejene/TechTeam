@@ -1,5 +1,6 @@
 var mongoose = require( 'mongoose' );
 
+
 let registrationSchema = new mongoose.Schema({
     first_name: String,
     last_name: String,

@@ -116,13 +116,13 @@
         <section id="matches">
 
            <% for(var user of users) { %>
-            <a href="">
+           <a href="">
                 <div class="img-holder">
                    <img alt="profile-image" src="/images/<%= user.avatar%>"/>
                 </div>
                 <span class="small-name-plate"><%= user.first_name%>, <span class="age"><%= user.age%></span></span>
                 <div class="about">
-                    <div class="container">
+                    <div cla ss="container">
                         <h2>Match since</h2>
                         <p><%= moment(user.match_date).format('LL') %></p>
                         <span class="location">
