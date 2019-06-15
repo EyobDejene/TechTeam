@@ -20,6 +20,7 @@ var overviewRouter = require('./routes/overview');
 var editRouter = require('./routes/editProfile');
 var registrationRouter = require('./routes/registration');
 var onboardingRouter = require('./routes/onboarding');
+var cancelRouter = require('./routes/cancel');
 
 
 
@@ -48,6 +49,7 @@ app.use('/overview', overviewRouter);
 app.use('/editProfile', editRouter);
 app.use('/registration', registrationRouter);
 // app.use('/onboarding', onboardingRouter);
+app.use('/cancel', cancelRouter);
 
 
 // catch 404 and forward to error handler
