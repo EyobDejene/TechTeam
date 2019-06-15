@@ -873,3 +873,16 @@ textarea {
   font-size: 1em;
   margin-top: -0.8em;
 }
+
+input[type='file']::-webkit-file-upload-button{
+  padding: 4rem 2rem;
+  color: rgba(255, 255, 255, 0);
+  background-color: #f3f3f3;
+  border: none;
+  background-image: url('../images/icons/add.png');
+  background-size: 30%;
+  background-repeat: no-repeat;
+  border-radius: .5em;
+  background-position: center;
+
+}
