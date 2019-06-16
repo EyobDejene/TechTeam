@@ -21,12 +21,14 @@ var editRouter = require('./routes/editProfile');
 var registrationRouter = require('./routes/registration');
 var onboardingRouter = require('./routes/onboarding');
 
+
 var cancelRouter = require('./routes/cancel');
 
 
 
 var deleteRouter = require('./routes/deleteProfile');
 var deletingRouter = require('./routes/deleting');
+
 
 
 var app = express();

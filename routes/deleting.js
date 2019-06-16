@@ -7,6 +7,7 @@ var User = require('../models/users.model');
 router.get('/', function (req, res) {
     // let query = { _id: req.session.user };
     User.remove({_id: req.session.user}, function (err) {
+
         if(err){
             console.log(err);
         } else {
