@@ -19,13 +19,13 @@ router.post('/',upload.single('avatar') ,function(req, res){
 
      var uploadImage;
 
+    //If no image is uploaded the avatar will stay the same
      if(req.file == undefined){
-        console.log("no image was uploaded");
-         uploadImage = '21e2644cb714ca0fec3f63d10f9e7068';
+         uploadImage = req.session.avatar;
          }
   
+    //If image is uploaded the avatar
     else{
-        console.log("hallo? ajhsgdjhasg");
         uploadImage = req.file.filename;
         }
 
