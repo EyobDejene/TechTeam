@@ -24,11 +24,12 @@ overview.get('/', function(req, res, next) {
 
             function ageDifference(userAge, ageRange) {
                 // set date today
-                var date = new Date();
-                date.setDate(date.getDate() - 6);
+                // var date = new Date();
+                // date.setDate(date.getDate() - 6);
                 //  today year - age range
-                date.setFullYear(date.getFullYear() + ageRange);
-                return Math.abs(userAge.getFullYear() - date.getFullYear());
+                // date.setFullYear(date.getFullYear() + ageRange);
+                // return Math.abs(userAge.getFullYear() - date.getFullYear());
+                return userAge - ageRange;
             }
 
             console.log("distance " + distance);
@@ -38,9 +39,10 @@ overview.get('/', function(req, res, next) {
             userList.find({
                 skill_level: skillLevel,
                 age: maxAge,
-                location: {$gte: distance, $lte: distance},
+                location: {$lte: distance},
                 running_scheme: runningScheme,
-                practice_time: practiceTime
+                practice_time: practiceTime,
+                _id: { $ne: req.session.user },
             }).select('first_name age avatar location match_date')
                 .exec()
                 .then(function (users) {
@@ -66,7 +68,7 @@ overview.get('/', function(req, res, next) {
             });
         }
     }else{
-        userList.find().select('first_name age avatar location match_date')
+        userList.find({ _id: { $ne: req.session.user }}).select('first_name age avatar location match_date')
             .exec()
             .then(function (users) {
                 res.render('overview', {

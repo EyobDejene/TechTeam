@@ -874,6 +874,7 @@ textarea {
   margin-top: -0.8em;
 }
 
+
 input[type='file']::-webkit-file-upload-button{
   padding: 4rem 2rem;
   color: rgba(255, 255, 255, 0);
@@ -885,4 +886,43 @@ input[type='file']::-webkit-file-upload-button{
   border-radius: .5em;
   background-position: center;
 
+}
+.noButton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: solid black 2px;
+
+}
+
+.yesButton {
+  background-color: rgb(186, 26, 26); /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: solid black 2px;
+  margin-top: 20px;
+
+}
+
+div#confirmation-box{
+background-color: #FFAA1A;
+text-align: center;
+width: 50%;
+margin-left: auto;
+margin-right: auto;
+padding: 4%;
+min-height: 200px;
+margin-top: 50px;
+border-radius: 25%;
+box-shadow: rgba(0, 0, 0, 0.331) 3px 3px 3px 3px;
 }

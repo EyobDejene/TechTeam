@@ -1,0 +1,37 @@
+<body id="home-page">
+
+<!-- start header -->
+<header>
+    <div class="container">
+    <!-- start navigation -->
+    <nav>
+        <ul>
+        <li><a href="/explore" class="profile-button"><img src="/images/icons/left-arrow.svg" alt="back"></a></li>
+        <li><a href="/explore" class="logo"><img alt="logo" src="/images/icons/logo.svg"></a></li>
+        <li><a href="/overview" class="matches-button"><img alt="overview" src="/images/icons/heartbeat.svg"></a></li>
+        </ul>
+    </nav>
+    <!-- end navigation -->
+    </div>
+</header>
+<!-- end header -->
+
+<main>
+    <section>
+        <h1>Profile</h1>
+        <article class="profile">
+            <div class="img-holder-editProfile">
+                <img src="/images/<%= users.avatar %>" alt="profile">
+            </div>
+            
+            <span class="name-plate-editProfile"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
+            <br>
+            <div id="confirmation-box">
+            <h3>Delete Account?</h3>
+                <a class="noButton" href="/editProfile">No</a>
+                <a class="yesButton" href="/deleting">YES</a>
+            </div>
+        </article>
+    </section>
+</main>
+<!-- end main content-->

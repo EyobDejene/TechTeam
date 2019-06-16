@@ -29,6 +29,7 @@ router.get('/', function(req, res, next) {
         userModel.find({
             skill_level: skillLevel,
             location: {$lte: maxDistance},
+            _id: { $ne: req.session.user },
             // running_scheme: runningScheme,
             // practice_time: practiceTime
         }).select('first_name age avatar location match_date bio')
