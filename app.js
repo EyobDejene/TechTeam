@@ -20,8 +20,14 @@ var overviewRouter = require('./routes/overview');
 var editRouter = require('./routes/editProfile');
 var registrationRouter = require('./routes/registration');
 var onboardingRouter = require('./routes/onboarding');
+
+var cancelRouter = require('./routes/cancel');
+
+
+
 var deleteRouter = require('./routes/deleteProfile');
 var deletingRouter = require('./routes/deleting');
+
 
 var app = express();
 
@@ -50,6 +56,7 @@ app.use('/registration', registrationRouter);
 app.use('/deleteProfile', deleteRouter);
 app.use('/deleting', deletingRouter);
 // app.use('/onboarding', onboardingRouter);
+app.use('/cancel', cancelRouter);
 
 
 // catch 404 and forward to error handler

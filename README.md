@@ -31,6 +31,7 @@ Read [wiki](https://github.com/EyobDejene/projectTech/wiki) for the whole proces
 * [MongoDB](https://mongodb.com/) - Nosql DB
 * [Mongoose](https://mongoosejs.com/) - Mongodb object modeling
 * [Eslint](https://eslint.org/) - Linting utility for JavaScript
+* [Multer](https://www.npmjs.com/package/multer) - Node.js middleware for handling multipart/form-data
 
 ## Installation
 
