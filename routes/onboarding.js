@@ -35,6 +35,7 @@ router.post('/', async function(req, res) {
         req.session.userName = user[0].first_name;
         req.session.lastName = user[0].last_name;
         req.session.userAge = user[0].age;
+        req.session.avatar = user[0].avatar;
         req.session.userLocation = user[0].location;
         req.session.skillLevel = user[0].skill_level;
         req.session.maxDistance = user[0].max_distance;
