@@ -18,9 +18,15 @@
 
 <!-- start main content -->
 <main>
+
+    <div class="pulse-box loader not-visible">
+        <div class="pulse-css"></div>
+    </div>
     <section>
+
         <% if (users.length >1) { %>
             <h1 class="not-visible">stack</h1>
+            <div class="stack">
             <article class="profile">
                 <div class="img-holder">
                     <img id="avatar" src="upload/<%= users[0].avatar%>" alt="profile">
@@ -40,14 +46,16 @@
                         <p class="bio-text">
                            <%= users[0].bio%>
                         </p>
+                    </div>
+                </div>
+            </article>
+                    </div>
                         <div class="container-buttons">
                         <button class="option dislike"></button>
                         <button class="option refresh"></button>
                         <button class="option like"></button>
                         </div>
-                    </div>
-                </div>
-            </article>
+
         <% }else{ %>
             <h1>No users where found near you</h1>
          <% } %>

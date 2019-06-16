@@ -60,13 +60,27 @@ async function placeDataExplore(){
         let data = await dataExplore();
         // console.log(data);
         var randomItem = data[Math.floor(Math.random()*data.length)];
+        let loader = document.querySelector('.loader');
+        let section = document.querySelector('.stack');
+        let refreshButton = document.querySelector('.refresh');
        // console.log(randomItem);
         //document.querySelector('.results-count').innerHTML = data.length;
-       document.getElementById('avatar').src = "upload/"+randomItem.avatar;
-       document.querySelector('.first-name').innerHTML = randomItem.first_name;
-       document.querySelector('.age').innerHTML = randomItem.age;
-       document.querySelector('.distance-location').innerHTML = randomItem.location;
-       document.querySelector('.bio-text').innerHTML = randomItem.bio;
+        console.log(loader);
+        loader.classList.remove('not-visible');
+        section.classList.add('not-visible');
+        refreshButton.disabled = true;
+        setTimeout(function () {
+                    loader.classList.add('not-visible');
+                    section.classList.remove('not-visible');
+                    refreshButton.disabled = false;
+                    document.getElementById('avatar').src = "upload/"+randomItem.avatar;
+                    document.querySelector('.first-name').innerHTML = randomItem.first_name;
+                    document.querySelector('.age').innerHTML = randomItem.age;
+                    document.querySelector('.distance-location').innerHTML = randomItem.location;
+                    document.querySelector('.bio-text').innerHTML = randomItem.bio;
+        }, Math.floor(Math.random() * 2500));
+
+
         // "/images/"+randomItem.avatar;
     } catch(error) {
         console.error(error);
@@ -80,5 +94,11 @@ if(search) {
         placeDataExplore();
     });
 }
+
+
+
+
+
+
 
 
