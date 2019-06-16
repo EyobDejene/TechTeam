@@ -8,7 +8,7 @@ let UsersSchema = new mongoose.Schema({
     email: String,
     password: String,
     age: Number,
-    avatar: String,
+    avatar: {type: String, default: 'profilePlaceholder.png'},
     bio: String,
     location: Number,
     skill_level: Number,
