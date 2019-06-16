@@ -40,13 +40,13 @@ let SkillFilterState = function(){
         if (this.value == 0 || skillState == 0) {
             skillOutput.innerHTML = "Beginner";
             skillSlider.setAttribute("value", skillState);
-        } else if (this.value == 2 || skillState == 1) {
+        } else if (this.value == 1 || skillState == 1) {
             skillOutput.innerHTML = "Intermediate";
             skillSlider.setAttribute("value", skillState);
-        } else if (this.value == 3 || skillState == 2) {
+        } else if (this.value == 2 || skillState == 2) {
             skillOutput.innerHTML = "Advanced";
             skillSlider.setAttribute("value", skillState);
-        } else if (this.value == 4 || skillState == 3) {
+        } else if (this.value == 3 || skillState == 3) {
             skillOutput.innerHTML = "Expert";
             skillSlider.setAttribute("value", skillState);
         }
