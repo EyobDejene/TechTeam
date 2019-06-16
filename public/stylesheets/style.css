@@ -910,16 +910,19 @@ input[type='file']::-webkit-file-upload-button{
   display: inline-block;
   font-size: 16px;
   border: solid black 2px;
+  margin-top: 20px;
 
 }
 
 div#confirmation-box{
-border: solid black 2px;
 background-color: #FFAA1A;
 text-align: center;
 width: 50%;
 margin-left: auto;
 margin-right: auto;
+padding: 4%;
 min-height: 200px;
-
+margin-top: 50px;
+border-radius: 25%;
+box-shadow: rgba(0, 0, 0, 0.331) 3px 3px 3px 3px;
 }
