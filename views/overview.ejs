@@ -24,7 +24,6 @@
 <form id="filter" action="?" method="get" >
    <div class="formInner">
        <h1 class="page-title">Filter</h1>
-
            <% if (users.length >= 2) { %>
                <span class="search-results">
                    <span class="results-count"><%= users.length %></span>  matches found
@@ -40,36 +39,53 @@
     <div class="option">
         <h2>Skill Level</h2>
         <span class="output skill">Intermediate</span>
-        <input type="range" name="skilLevel" min="1" max="4" value="4" class="slider filtering" id="skill">
+        <input type="range" name="skilLevel" min="0" max="2" value="<%= filter && skillLevel  ? skillLevel : '' %>"
+               class="slider
+        filtering"
+               id="skill">
         <hr>
     </div>
 
     <div class="option">
         <h2>Age Difference</h2>
         <span class="output age">20 - 25</span>
-        <input type="range" name="ageRange" min="0" max="50" value="3" class="slider filtering" id="age">
+        <input type="range" name="ageRange" min="0" max="50" value="<%=  filter && ageRange  ? ageRange : '' %>"
+               class="slider
+        filtering"
+               id="age">
         <hr>
     </div>
 
     <div class="option">
         <h2>Max Distance</h2>
         <span class="output distance">35</span>
-        <input type="range" name="maxDistance" min="0" max="50" value="15" class="slider filtering" id="distance">
+        <input type="range" name="maxDistance" min="0" max="50" value="<%=  filter && maxDistance  ? maxDistance : ''
+        %>" class="slider
+        filtering" id="distance">
         <hr>
     </div>
 
     <div class="option-radio">
         <h2>Running Scheme</h2>
         <label class="container-radio radio1">1x per month
-            <input type="radio" class="runningScheme filtering" name="runningScheme" value="0" checked="checked">
+            <input type="radio" class="runningScheme filtering" name="runningScheme" checked="checked"
+                   <% if(filter && runningScheme ==0){%>
+                   checked="checked"<%}%>
+                   value="0">
             <span class="checkmark"></span>
         </label>
         <label class="container-radio radio2">2/3x per week
-            <input type="radio" class="runningScheme filtering" name="runningScheme" value="1">
+            <input type="radio" class="runningScheme filtering" name="runningScheme"
+            <% if(filter && runningScheme ==1){%>
+                   checked="checked"<%}%>
+                   value="1">
             <span class="checkmark"></span>
         </label>
         <label class="container-radio radio3">1x per week
-            <input type="radio"  class="runningScheme filtering" name="runningScheme" value="2">
+            <input type="radio"  class="runningScheme filtering" name="runningScheme"
+            <% if(filter && runningScheme ==2){%>
+                   checked="checked"<%}%>
+                   value="2">
             <span class="checkmark"></span>
         </label>
         <hr>
@@ -78,15 +94,24 @@
     <div class="option-checkbox">
         <h2>Practice Time</h2>
         <label class="container-radio checkbox1">morning
-            <input type="radio"  class="practiceTime filtering" name="practiceTime" checked="checked" value="0">
+            <input type="radio"  class="practiceTime filtering" name="practiceTime" checked="checked"
+            <% if(filter && practiceTime ==0){%>
+                   checked="checked"<%}%>
+                   value="0">
             <span class="checkmark"></span>
         </label>
         <label class="container-radio checkbox2">afternoon
-            <input type="radio"  class="practiceTime filtering" name="practiceTime" value="1">
+            <input type="radio"  class="practiceTime filtering" name="practiceTime"
+            <% if(filter && practiceTime ==1){%>
+                   checked="checked"<%}%>
+                   value="1">
             <span class="checkmark"></span>
         </label>
         <label class="container-radio checkbox3">evening
-            <input type="radio" class="practiceTime filtering" name="practiceTime" value="2">
+            <input type="radio" class="practiceTime filtering" name="practiceTime"
+            <% if(filter && practiceTime ==2){%>
+                   checked="checked"<%}%>
+                   value="2">
             <span class="checkmark"></span>
         </label>
         <hr>
@@ -116,9 +141,9 @@
         <section id="matches">
 
            <% for(var user of users) { %>
-            <a href="">
+           <a href="">
                 <div class="img-holder">
-                   <img alt="profile-image" src="/images/<%= user.avatar%>"/>
+                   <img alt="profile-image" src="upload/<%= user.avatar%>"/>
                 </div>
                 <span class="small-name-plate"><%= user.first_name%>, <span class="age"><%= user.age%></span></span>
                 <div class="about">

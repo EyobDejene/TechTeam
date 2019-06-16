@@ -7,7 +7,8 @@
 >This feature focuses on filtering of your matches.
 
 # Live version
-https://teamdating.herokuapp.com/editProfile
+https://teamdating.herokuapp.com
+
 
 # Usage
 The filter button is by default not visible.<br/>
@@ -31,6 +32,7 @@ Read [wiki](https://github.com/EyobDejene/projectTech/wiki) for the whole proces
 * [MongoDB](https://mongodb.com/) - Nosql DB
 * [Mongoose](https://mongoosejs.com/) - Mongodb object modeling
 * [Eslint](https://eslint.org/) - Linting utility for JavaScript
+* [Multer](https://www.npmjs.com/package/multer) - Node.js middleware for handling multipart/form-data
 
 ## Installation
 

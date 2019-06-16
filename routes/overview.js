@@ -4,9 +4,21 @@ var overview = express.Router();
 
 /* GET users listing. */
 overview.get('/', function(req, res, next) {
+
+    //calc dif
+    function difference(n, m) {
+        return Math.abs(n - m);
+    }
+
+    function ageDifference(userAge, ageRange) {
+        return userAge - ageRange;
+    }
+
     // check if url contains keys
     if(Object.keys(req.query).length) {
         if(req.session.user) {
+
+            //getting values of req query from url
             var skillLevel = req.query.skilLevel;
             var ageRange = Number(req.query.ageRange);
             var userAge = new Date(req.session.userAge);
@@ -14,36 +26,25 @@ overview.get('/', function(req, res, next) {
             var runningScheme = req.query.runningScheme;
             var practiceTime = req.query.practiceTime;
             var maxAge = ageDifference(userAge, ageRange);
-            var distance = difference(req.session.userLocation, maxDistance);
 
 
-            //calc dif
-            function difference(n, m) {
-                return Math.abs(n - m);
-            }
+            // var distance = //difference(req.session.userLocation, maxDistance);
 
-            function ageDifference(userAge, ageRange) {
-                // set date today
-                var date = new Date();
-                date.setDate(date.getDate() - 6);
-                //  today year - age range
-                date.setFullYear(date.getFullYear() + ageRange);
-                return Math.abs(userAge.getFullYear() - date.getFullYear());
-            }
+            // console.log("distance " + distance);
+            // console.log("age " + maxAge);
 
-            console.log("distance " + distance);
-            console.log("age " + maxAge);
-
-
+            // find and create object  with users with specific conditions
             userList.find({
                 skill_level: skillLevel,
-                age: maxAge,
-                location: {$gte: distance, $lte: distance},
+                age: {$lte: maxAge },
+                location: {$lte: maxDistance },
                 running_scheme: runningScheme,
-                practice_time: practiceTime
+                practice_time: practiceTime,
+                _id: { $ne: req.session.user },
             }).select('first_name age avatar location match_date')
                 .exec()
                 .then(function (users) {
+                    // if its a xhr request make json object
                     if (req.xhr) {
                         res.json(users);
                     } else {
@@ -51,8 +52,14 @@ overview.get('/', function(req, res, next) {
                             title: 'Filter',
                             users: users,
                             filter: true,
-                            session: req.session.user
+                            session: req.session.user,
+                            skillLevel:  skillLevel,
+                            ageRange: ageRange,
+                            maxDistance: maxDistance,
+                            runningScheme: runningScheme,
+                            practiceTime: practiceTime
                         });
+                        // console.log(ageRange);
                     }
                 })
                 .catch(err => {
@@ -61,19 +68,18 @@ overview.get('/', function(req, res, next) {
                     });
                 });
         }else{
-            res.render('error', {
-                message: 'No session has been found -> first login'
-            });
+            res.redirect('/');
         }
     }else{
-        userList.find().select('first_name age avatar location match_date')
+        // if url doesn't have parameters run this
+        userList.find({ _id: { $ne: req.session.user }}).select('first_name age avatar location match_date')
             .exec()
             .then(function (users) {
                 res.render('overview', {
                     title: 'Matches',
                     users: users,
                     filter: false,
-                    session: req.session.user
+                    session: req.session.user,
                 });
             })
             .catch(err => {

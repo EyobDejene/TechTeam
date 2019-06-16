@@ -3,6 +3,7 @@ var loginModel = require('../models/login.model');
 var usersModel = require('../models/users.model');
 var router = express.Router();
 
+
 /* GET home page. */
 router.get('/', function(req, res) {
 
@@ -10,10 +11,13 @@ router.get('/', function(req, res) {
 
 });
 
-router.post('/', function(req, res) {
+router.post('/', async function(req, res) {
    if(!req.body){
      return res.status(400).send('Request body is missing');
    }
+
+
+
    let model = new loginModel(req.body);
    model.save()
        .then(doc => {
@@ -41,7 +45,8 @@ router.post('/', function(req, res) {
        .catch(err => {
         res.status(500).redirect('/');
        });
-});
+       
+      });
 
 
 
