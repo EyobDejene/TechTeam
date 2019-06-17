@@ -37,7 +37,7 @@ router.post('/',upload.single('avatar') ,function(req, res){
         {upsert: true}, function(){
                 // redirects to the editProfile page when form is submitted
                 res.redirect('/editProfile');
-            
+
         }   
     );
 
