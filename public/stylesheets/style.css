@@ -718,6 +718,10 @@ label{
   display: none!important;
 }
 
+.hide{
+  visibility: hidden!important;
+}
+
 input:focus {
     outline: none !important;
     box-shadow: 0 0 10px #719ECE!important;
@@ -1000,4 +1004,10 @@ svg.pulse-svg .third-circle {
     transform: scale(5);
     opacity: 0;
   }
+}
+
+
+.nojs select{
+  width: 100%;
+  margin-top: 1rem;
 }
