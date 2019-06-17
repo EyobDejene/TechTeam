@@ -40,7 +40,7 @@ async function placeData(){
         // console.log(data.length);
         document.querySelector('.results-count').innerHTML = data.length;
     } catch(error) {
-        console.error(error);
+        console.log(error);
     }
 }
 
@@ -75,9 +75,10 @@ async function placeDataExplore(){
 
 
 let search = document.querySelector('.refresh');
-search.addEventListener("click", function () {
-    placeDataExplore();
-});
-
+if(search) {
+    search.addEventListener("click", function () {
+        placeDataExplore();
+    });
+}
 
 

@@ -18,19 +18,22 @@
 
 <main>
     <section>
+
         <h1>Profile</h1>
         <article class="profile">
             <div class="img-holder-editProfile">
-                <img src="/images/<%= users.avatar %>" alt="profile">
+                <img src="upload/<%= users.avatar %>" alt="profile">
             </div>
             
             <span class="name-plate-editProfile"><%= users.first_name %>, <span class="age"><%= users.age %></span></span>
             <br>
+
             <div id="confirmation-box">
             <h3>Delete Account?</h3>
                 <a class="noButton" href="/editProfile">No</a>
                 <a class="yesButton" href="/deleting">YES</a>
             </div>
+
         </article>
     </section>
 </main>
