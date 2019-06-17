@@ -33,7 +33,13 @@ router.post('/',upload.single('avatar') ,function(req, res){
     // updates the user's bio, age, skill level, running scheme, weeek or month scheme, practice time, max distance, and avatar
     User.findByIdAndUpdate(
         {_id: req.session.user},
-        {bio: req.body.bio, age: req.body.age, skill_level: req.body.skillLevel, running_scheme: req.body.scheme, practice_time: req.body.time, max_distance:req.body.maxDistance, avatar: uploadImage}, 
+        {bio: req.body.bio, 
+              age: req.body.age,
+              skill_level: req.body.skillLevel,
+              running_scheme: req.body.scheme,
+              practice_time: req.body.time,
+              max_distance:req.body.maxDistance,
+              avatar: uploadImage}, 
         {upsert: true}, function(){
                 // redirects to the editProfile page when form is submitted
                 res.redirect('/editProfile');
