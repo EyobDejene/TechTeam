@@ -25,45 +25,84 @@
    <div class="formInner">
        <h1 class="page-title">Filter</h1>
            <% if (users.length >= 2) { %>
-               <span class="search-results">
+               <span class="search-results js hide">
                    <span class="results-count"><%= users.length %></span>  matches found
                </span>
            <% }else { %>
-               <span class="search-results">
+               <span class="search-results js hide">
                    <span class="results-count"><%= users.length %></span>  match found
                </span>
            <% } %>
 
 
+       <div class="nojs">
+           <h2>Skill Level</h2>
+           <select name="skilLevel">
+               <option value="0">Beginner</option>
+               <option value="1">Intermediate</option>
+               <option value="2">Advanced</option>
+               <option value="3">Expert</option>
+           </select>
+       </div>
 
-    <div class="option">
+    <div class="js option hide">
         <h2>Skill Level</h2>
         <span class="output skill">Intermediate</span>
-        <input type="range" name="skilLevel" min="0" max="3" value="<%= filter && skillLevel  ? skillLevel : '' %>"
+        <input hidden type="range" name="skilLevel" min="0" max="3" value="<%= filter && skillLevel  ? skillLevel :
+                '' %>"
                class="slider
         filtering"
                id="skill">
         <hr>
     </div>
 
-    <div class="option">
+       <div class="nojs">
+           <h2>Age Difference</h2>
+           <select name="ageRange">
+               <option value="0">0 year</option>
+               <option value="5">5 years</option>
+               <option value="10">10 years</option>
+               <option value="15">15 years</option>
+               <option value="20">20 years</option>
+               <option value="25">25 years</option>
+               <option value="30">30 years</option>
+           </select>
+       </div>
+
+    <div class="js option hide">
         <h2>Age Difference</h2>
         <span class="output age">20 - 25</span>
-        <input type="range" name="ageRange" min="0" max="50" value="<%=  filter && ageRange  ? ageRange : '' %>"
+        <input hidden type="range" name="ageRange" min="0" max="50" value="<%=  filter && ageRange  ? ageRange : '' %>"
                class="slider
         filtering"
                id="age">
         <hr>
     </div>
 
-    <div class="option">
-        <h2>Max Distance</h2>
-        <span class="output distance">35</span>
-        <input type="range" name="maxDistance" min="0" max="50" value="<%=  filter && maxDistance  ? maxDistance : ''
-        %>" class="slider
+       <div class="nojs">
+           <h2>Max Distance</h2>
+           <select name="maxDistance">
+               <option value="0">0 - 5 km</option>
+               <option value="5">5 - 10 km</option>
+               <option value="10">10 - 15 km</option>
+               <option value="15">15 - 20 km</option>
+               <option value="20">20 - 25 km</option>
+               <option value="25">25 - 30 km</option>
+               <option value="30">30 - 35 km</option>
+           </select>
+       </div>
+
+
+       <div class="js option hide">
+           <h2>Max Distance</h2>
+           <span class="output distance">35</span>
+           <input hidden type="range" name="maxDistance" min="0" max="50" value="<%=  filter && maxDistance  ? maxDistance
+                   : ''
+           %>" class="slider
         filtering" id="distance">
-        <hr>
-    </div>
+           <hr>
+       </div>
+
 
     <div class="option-radio">
         <h2>Running Scheme</h2>

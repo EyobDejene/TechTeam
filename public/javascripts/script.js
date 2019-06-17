@@ -55,6 +55,7 @@ function dataExplore() {
 }
 
 
+//
 async function placeDataExplore(){
     try {
         let data = await dataExplore();
@@ -65,7 +66,7 @@ async function placeDataExplore(){
         let refreshButton = document.querySelector('.refresh');
        // console.log(randomItem);
         //document.querySelector('.results-count').innerHTML = data.length;
-        console.log(loader);
+        // console.log(loader);
         loader.classList.remove('not-visible');
         section.classList.add('not-visible');
         refreshButton.disabled = true;
@@ -95,6 +96,33 @@ if(search) {
     });
 }
 
+
+// check if js in enabled
+
+let js = document.querySelectorAll('.js');
+let nojs = document.querySelectorAll('.nojs');
+
+
+if(js) {
+
+    let input = document.getElementsByTagName('input');
+
+    for (var i = 0; i < input.length; i++) {
+        input[i].removeAttribute("hidden");
+    }
+
+
+
+    js.forEach(function (js) {
+        js.classList.remove('hide');
+    });
+
+    nojs.forEach(function (nojs) {
+        nojs.classList.add('hide');
+        nojs.remove();
+    });
+
+}
 
 
 
